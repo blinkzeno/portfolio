@@ -1,167 +1,168 @@
-* {
-  box-sizing: border-box;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #0c1618;
-  margin: 0;
-  padding: 0;
+:root {
+   --primary-color: #F71735;
+   --secondary-color: #FDFFFC;
+   --background-color: #0c1618;
+   --text-color: #fff;
+   --font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+   --transition-duration: .3s;
+   --animation-duration: 1s;
 }
 
+/* Reset and Base Styles */
+* {
+   box-sizing: border-box;
+   font-family: var(--font-family);
+   background-color: var(--background-color);
+   margin: 0;
+   padding: 0;
+}
+
+/* Header Styles */
 header {
-  position: fixed;
-  height: auto;
-  width: 100%;
-  top: 20px;
-  left: 0;
-  z-index: 9999;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 10%;
-  text-decoration: none;
+   position: fixed;
+   width: 100%;
+   top: 20px;
+   left: 0;
+   z-index: 9999;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 0 10%;
 }
 
 header a {
-  text-decoration: none;
-  font-weight: bold;
-  color: #fff;
+   text-decoration: none;
+   font-weight: bold;
+   color: var(--text-color);
 }
 
 #logo {
+   font-size: 32px;
    position: relative;
-  font-size: 32px;
-  
 }
 
-#logo::before{
+#logo::before {
    content: '';
    position: absolute;
    top: 0;
    right: 0;
    width: 100%;
    height: 100%;
-   background-color: #0c1618;
-   animation: showRight 1s forwards;
-  animation-delay: .4s;
+   background-color: var(--background-color);
+   animation: showRight var(--animation-duration) forwards;
+   animation-delay: .4s;
 }
 
-
-
-nav{
+nav {
    display: flex;
    height: fit-content;
 }
+
 nav a {
-  margin-left: 10px;
-  padding: 5px 8px;
-  font-size: 16px;
-  transition: .3s ease-in;
+   margin-left: 10px;
+   padding: 5px 8px;
+   font-size: 16px;
+   transition: color var(--transition-duration) ease-in;
 }
 
 nav a:hover, .active {
-   color: #F71735;
+   color: var(--primary-color);
    border-bottom: 2px solid #9d0f22;
 }
 
-main{
+/* Main Content Styles */
+main {
    width: 100%;
    height: 100vh;
    display: flex;
-   
    align-items: center;
-   padding: 0% 10%;
-   
-}
-.home-content {
-   max-width: 600px;
-   color: #FDFFFC;
-}
-.home-content h1{
-   position: relative;
-   font-size: 54px;
-   font-weight: 700;
+   padding: 0 10%;
 }
 
-.home-content h1::before{
+.home-content {
+   max-width: 600px;
+   color: var(--secondary-color);
+}
+
+.home-content h1 {
+   font-size: 54px;
+   font-weight: 700;
+   position: relative;
+}
+
+.home-content h1::before {
    content: '';
    position: absolute;
    top: 0;
    right: 0;
    width: 100%;
    height: 100%;
-   background-color: #0c1618;
+   background-color: var(--background-color);
    animation: showRight 1.3s forwards;
-  animation-delay: .6s;
+   animation-delay: .6s;
 }
 
-
-.home-content h2{
-   position: relative;
+.home-content h2 {
    font-size: 32px;
-   color: #F71735;
+   color: var(--primary-color);
    font-weight: 700;
    line-height: 1.2;
    margin-bottom: 10px;
+   position: relative;
 }
 
-.home-content h2::before{
+.home-content h2::before {
    content: '';
    position: absolute;
    top: 0;
    right: 0;
    width: 100%;
    height: 100%;
-   background-color: #0c1618;
+   background-color: var(--background-color);
    animation: showRight 1.3s forwards;
-  animation-delay: 1s;
+   animation-delay: 1s;
 }
 
-
-.home-content p{
-   position: relative;
+.home-content p {
    font-size: 16px;
    margin-bottom: 32px;
-   
-   
+   position: relative;
 }
 
-.home-content p::before{
+.home-content p::before {
    content: '';
    position: absolute;
    top: 0;
    right: 0;
    width: 100%;
    height: 100%;
-   background-color: #0c1618;
+   background-color: var(--background-color);
    animation: showRight 1.5s forwards;
-  animation-delay: 1.2s;
+   animation-delay: 1.2s;
 }
 
-
-.btn-box{
-   position: relative;
-   width: 345;
-   height: 50px;
+.btn-box {
    display: flex;
    gap: 52px;
- 
+   position: relative;
+   width: 345px;
+   height: 50px;
 }
 
-.home-content .btn-box::before{
+.home-content .btn-box::before {
    content: '';
    position: absolute;
    top: 0;
    right: 0;
    width: 100%;
    height: 100%;
-   background-color: #0c1618;
+   background-color: var(--background-color);
    animation: showRight 1.5s forwards;
-  animation-delay: 1.5s;
-  z-index: 2;
+   animation-delay: 1.5s;
+   z-index: 2;
 }
 
-
-.btn-box a{
-   position: relative;
+.btn-box a {
    display: inline-flex;
    width: 150px;
    height: 100%;
@@ -171,144 +172,131 @@ main{
    text-decoration: none;
    font-size: 16px;
    font-weight: 600;
-   border: 1px solid #F71735;
+   border: 1px solid var(--primary-color);
    overflow: hidden;
    z-index: 1;
-   
-   
+   position: relative;
 }
 
-.btn-box a:nth-child(1){
-   background-color:#F71735;
-   color: #FDFFFC;
+.btn-box a:nth-child(1) {
+   background-color: var(--primary-color);
+   color: var(--secondary-color);
 }
 
-.btn-box a:nth-child(2){
-   color: #F71735;
+.btn-box a:nth-child(2) {
+   color: var(--primary-color);
 }
 
-.btn-box a:nth-child(1):hover{
- color: #F71735;
-}
-.btn-box a:nth-child(2):hover{
-  color:#FDFFFC ;
-   
-  }
-
-.btn-box a:nth-child(1)::before{
-   background: #0c1618;
-   
+.btn-box a:nth-child(1):hover {
+   color: var(--primary-color);
 }
 
-.btn-box a:nth-child(2)::before{
-   background-color: #F71735;
+.btn-box a:nth-child(2):hover {
+   color: var(--secondary-color);
 }
 
+.btn-box a:nth-child(1)::before {
+   background: var(--background-color);
+}
 
-.btn-box a::before{
+.btn-box a:nth-child(2)::before {
+   background-color: var(--primary-color);
+}
+
+.btn-box a::before {
    content: '';
    position: absolute;
    top: 0;
    left: 0;
    width: 0;
    height: 100%;
-  
    z-index: -1;
-   transition: .3s;
+   transition: width var(--transition-duration);
 }
 
-
-.btn-box a:hover::before{
+.btn-box a:hover::before {
    width: 100%;
 }
 
-.image-content{
+/* Image Content Styles */
+.image-content {
    position: relative;
    margin-top: 40px;
    width: 100%;
    height: 700px;
    display: flex;
    background-size: cover;
-  
-  
 }
 
-.image-content::before{
+.image-content::before {
    content: '';
    position: absolute;
    top: 0;
    right: 0;
    width: 100%;
    height: 100%;
-   background-color: #0c1618;
+   background-color: var(--background-color);
    animation: showRight 1.5s forwards;
-  animation-delay: 2.3s;
+   animation-delay: 2.3s;
 }
 
-
-.image-content img{
+.image-content img {
    width: 100%;
    height: auto;
-   transition: .3s;
-   object-fit:cover ;
+   transition: opacity var(--transition-duration);
+   object-fit: cover;
 }
 
-.image-content img:hover{
+.image-content img:hover {
    opacity: .6;
 }
 
-#home-fotter{
+/* Footer Styles */
+#home-footer {
    position: absolute;
-   bottom:0;
+   bottom: 0;
    left: 0;
    width: auto;
    height: 70px;
    display: flex;
    padding: 0 10%;
    gap: 32px;
-   
 }
 
-
-
-
-#home-fotter a{
+#home-footer a {
    width: 60px;
    position: relative;
    text-decoration: none;
    font-size: 24px;
    height: 60px;
-   border: 1px solid #F71735;
+   border: 1px solid var(--primary-color);
    border-radius: 50%;
    display: inline-flex;
    align-items: center;
    justify-content: center;
    z-index: 1;
    overflow: hidden;
-   color: #F71735;
+   color: var(--primary-color);
 }
 
-#home-fotter::before{
+#home-footer::before {
    content: '';
    position: absolute;
    top: 0;
    right: 0;
    width: 100%;
    height: 100%;
-   background-color: #0c1618;
+   background-color: var(--background-color);
    animation: showRight 1.3s forwards;
-  animation-delay: 2s;
-  z-index: 4;
+   animation-delay: 2s;
+   z-index: 4;
 }
 
-
-
-#home-fotter a:hover{
-   color: #FDFFFC;
+#home-footer a:hover {
+   color: var(--secondary-color);
 }
 
-
-#home-fotter a::before{
+#home-footer a::before {
    content: '';
    position: absolute;
    top: 0;
@@ -316,20 +304,17 @@ main{
    width: 0;
    height: 100%;
    z-index: -1;
-   transition: .3s;
-   background-color: #F71735;
-   
+   transition: width var(--transition-duration);
+   background-color: var(--primary-color);
 }
 
-#home-fotter a:hover::before
-{
+#home-footer a:hover::before {
    width: 100%;
-   
 }
 
-@keyframes showRight{
-   100%{
-      width: 0%;
+/* Keyframes */
+@keyframes showRight {
+   100% {
+       width: 0%;
    }
-  
 }
